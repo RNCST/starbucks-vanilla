@@ -50,3 +50,15 @@ window.addEventListener('scroll', _.throttle(
         }
     }, 300));
 // document는 html 그자체도 window는 보고잇는 화면 자체다.
+
+
+
+const fadeEls = document.querySelectorAll('.visual .fade-in');
+fadeEls.forEach(function(fadeEl, index) {
+    gsap.to(fadeEl, 1, {
+        delay:(index+1) *.7,
+        // gsap 이 제공하는 delay
+        // index는 function이 돌때마다 0부터 1씩 올라간다.
+        opacity: 1,
+    });
+});
