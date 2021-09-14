@@ -6,6 +6,7 @@ body {
     line-height: 1.4;
     /* 줄높이 font-size*1.4 */
     font-family: 'Nanum Gothic', sans-serif;
+    height: 3000px;
 }
 img {
     display:block;
@@ -27,9 +28,14 @@ a {
 }
 /* HEADER */
 header {
+    width: 100%;
+    /* auto를 하게되면 fixed absolute로 인해 최소로 가로를 쓰게된다. */
     background-color: #f6f6f0;
-    boder0bottom: 1px solie #c8c8c8;
-
+    border-bottom: 1px solie #c8c8c8;
+    position:fixed;
+    /* block 요소는 width가 최대한 늘어나려하지만 position이
+    fixed나 absolute면 최소한으로 쓰려한다 .  */
+    top: 0;
 }
 
 header > .inner {
@@ -169,6 +175,7 @@ header .main-menu .item:hover .item__name{
     background-color: #2c2a29;
     color: #669900;
     border-radius: 6px 6px 0 0;
+    transition: all .3s;
 }
     
 
@@ -182,11 +189,12 @@ header .main-menu .item .item__contents {
         화면의 뷰포트 좌우 끝까지 늘어날 수가 없다. */
     left: 0;
     display:none;
+    transition: display .4s;
 }
 
 header .main-menu .item:hover .item__contents {
     display:block;
-
+    
 }
 
 header .main-menu .item .item__contents  .contents__menu{
@@ -224,6 +232,11 @@ header .main-menu .item .item__contents  .contents__menu > ul > li ul li{
 
 }
 
+header .main-menu .item .item__contents  .contents__menu > ul > li ul li:hover{
+    color: #669900;
+
+}
+
 
 header .main-menu .item .item__contents  .contents__texture{
     padding: 26px 0;
@@ -240,4 +253,19 @@ header .main-menu .item .item__contents  .contents__texture p{
     color: #669900;
     margin: 4px 0 14px;
     
+}
+
+header .badges {
+    position: absolute;
+    top: 132px;
+    right: 12px;
+}
+
+header .badges .badge{
+    border-radius: 10px;    
+    overflow: hidden;
+    margin-bottom: 12px;
+    /* 이미지가 둥글게 깎인것 밖으로 넘어가지않도록 */
+    box-shadow:4px 4px 10px rgba(0,0,0,.15);
+    cursor: pointer;
 }

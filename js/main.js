@@ -15,10 +15,38 @@ searchInputEl.addEventListener('focus',function () {
     searchInputEl.setAttribute('placeholder', '통합검색');
     // html 속성 추가.
 });
-
 searchInputEl.addEventListener('blur',function() {
     searchEl.classList.remove('focused');
 
     searchInputEl.setAttribute('placeholder','');
     
 })
+
+
+
+
+const badgeEl = document.querySelector('header .badges');
+
+window.addEventListener('scroll', _.throttle(
+    // _.throttle(function, function이 실행되는 시간의 단위 ms)
+    function() {
+        console.log('scroll!');
+        console.log(window.scrollY);
+        if(window.scrollY> 500){
+            //badge hide
+            // badgeEl.style.display = 'none'
+            // gsap.to(animation 처리를 할 요소, 지속시간, 옵션);
+            gsap.to(badgeEl, .4, {
+                opacity: 0,
+                display: 'none'
+            });
+        }else {
+            //badge show
+            // badgeEl.style.display = 'block'
+            gsap.to(badgeEl, .4, {
+                opacity: 1,
+                display: 'block'
+            });
+        }
+    }, 300));
+// document는 html 그자체도 window는 보고잇는 화면 자체다.
