@@ -137,3 +137,27 @@ header .sub-menu .search.focused .material-icons{
     /* 아이콘이 안보이도록 투명 */
 
 }
+
+
+header .main-menu {
+    display:flex;
+    /* 세로를 가로로 */
+
+}
+
+header .main-menu .item{
+
+
+}
+
+header .main-menu .item .item__name{
+    padding: 10px 20px 34px 20px;
+    font-family: Arial, sans-serif;
+    font-size:13px;
+
+}
+
+header .main-menu .item .item__contents{
+
+
+}
