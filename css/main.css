@@ -1,5 +1,139 @@
+/* COMMMON */
 body {
     color: #333;
     font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    /* 줄높이 font-size*1.4 */
     font-family: 'Nanum Gothic', sans-serif;
+}
+img {
+    display:block;
+    /* img는 원래 inline 태그이여서 baseline아래에 여백이 생기는데
+    이것을 block으로 바꿈으로서 제거하려함.*/
+}
+a {
+    text-decoration: none;
+    /* a 태그의 기본 deco인 underline 삭제 */
+}
+
+/* HEADER */
+header {
+    background-color: #f6f6f0;
+    boder0bottom: 1px solie #c8c8c8;
+
+}
+
+header .inner {
+    width: 1100px;
+    height: 120px;
+    margin: 0 auto;
+    /* Header 에 inner가 중앙정렬 */
+    position: relative;
+    /*  */
+}
+
+header .logo {
+    height: 75px;
+    position: absolute;
+    /* 부모영역에 상대적으로 배치를 하는데 부모영역에 position이 지정되지 않으면
+    가장 containor블록을 기준으로 한다. */
+    top:0;
+    bottom:0;
+    left: 0;
+    margin:auto 0;
+    /* top bottom margin height가 주어져 있어야 세로 가운데 배치가 가능. 
+       가로 가운데 배치는 weight 에 left right 값을 쓰면됨. */
+}
+
+header .sub-menu{
+    position: absolute;
+    top: 10px;
+    right: 0;
+    /* 오른쪽으로 정렬 */
+
+    display:flex;
+
+}
+
+header .sub-menu ul.menu {
+    font-family: Arial, sans-serif;
+    display:flex;
+    /* 수직 정렬을 수평정렬로 바꿔줌. */
+
+}
+
+header .sub-menu ul.menu li{
+    position: relative;
+}
+
+header .sub-menu ul.menu li::before{
+    /* 구분선 작업...  */
+    content:"";
+    /* display: block; */
+    width: 1px;
+    height: 12px;
+    background-color: #e5e5e5;
+    position: absolute;
+    /* position absolute 로 인해 block요소로 됨.*/
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+header .sub-menu ul.menu li:first-child::before{
+    /* 첫번쨰 요소 에는 구분선이 필요가 없음. */
+    display:none;
+}
+
+header .sub-menu ul.menu li a{
+    font-size: 12px;
+    padding: 11px 16px;
+    /* 클릭 영역을 충분히 확보되게 */
+    display:block;
+    color:#656565;
+}
+
+header .sub-menu ul.menu li a:hover{
+    color: #000;
+}
+
+header .sub-menu .search {
+    height: 34px;
+    position : relative;
+}
+
+header .sub-menu .search input{
+    width: 36px;
+    height: 34px;
+    padding: 4px 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+    outline: none;
+    background-color: #fff;
+    color: #777;
+    font-size: 12px;
+    transition: width .4s;
+    
+}
+header .sub-menu .search input:focus{
+    width: 190px;
+    border-color: #669900;
+}
+
+
+header .sub-menu .search .material-icons{
+    height: 24px;
+    position : absolute;
+    top: 0;
+    bottom: 0;
+    right: 5px;
+    margin: auto;
+}
+
+header .sub-menu .search.focused .material-icons{
+    opacity: 0;
+    transition: all .4s;
+    /* 아이콘이 안보이도록 투명 */
+
 }

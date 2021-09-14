@@ -24,7 +24,6 @@
 
     <link rel="icon" href="./favicon.png">
     <!-- 고해상도 icon 파일링크. -->
-    <script src="./main.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
     <!-- browser 기본 style 초기화 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,6 +33,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- Google MaterialIcons -->
     <link rel="stylesheet" href="./css/main.css">
+
+    <script defer src="./js/main.js"></script>
 </head>
 <body>
     <!-- HEADER -->
@@ -43,6 +44,29 @@
             <a href="/index.html" class="logo">
                 <img src="./images//starbucks_logo.png" alt="STARGUCKS "/>
             </a>
+
+            <div class="sub-menu">
+                <ul class="menu">
+                    <li>
+                        <a href="/signIn.html">Sign In</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">My Starbucks</a>
+                        <!--  -->
+                        <!-- <a href="#"></a> -->
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">Customer Service & Ideas</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">Find a Store</a>
+                    </li>
+                </ul>
+                <div class="search">
+                    <input type="text">
+                    <div class="material-icons">search</div>
+                </div>
+            </div>
 
         </div>
     </header>
