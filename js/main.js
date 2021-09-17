@@ -26,6 +26,7 @@ searchInputEl.addEventListener('blur',function() {
 
 
 const badgeEl = document.querySelector('header .badges');
+const toTopEl = document.querySelector('#to-top');
 
 window.addEventListener('scroll', _.throttle(
     // _.throttle(function, function이 실행되는 시간의 단위 ms)
@@ -40,6 +41,11 @@ window.addEventListener('scroll', _.throttle(
                 opacity: 0,
                 display: 'none'
             });
+            //to top button show
+            gsap.to(toTopEl,.2, {
+                x:0,
+            })
+            
         }else {
             //badge show
             // badgeEl.style.display = 'block'
@@ -47,9 +53,19 @@ window.addEventListener('scroll', _.throttle(
                 opacity: 1,
                 display: 'block'
             });
+            //to top button hide
+            gsap.to(toTopEl, .2, {
+                x: 100,
+            });
         }
     }, 300));
-// document는 html 그자체도 window는 보고잇는 화면 자체다.
+// document는 html 그자체도 window는 보고있는 화면 자체다.
+toTopEl.addEventListener('click',function() {
+   gsap.to(window, .7, {
+       scrollTo: 0
+    //gsap.scrollTo plugin 추가로 필요함.
+   }); 
+});
 
 
 
