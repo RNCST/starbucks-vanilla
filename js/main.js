@@ -90,9 +90,6 @@ new Swiper('.promotion .swiper-container',{
         prevEl: '.promotion .swiper-prev',
         nextEl: '.promotion .swiper-next',
     }
-    
-
-
 });
 
 
@@ -108,3 +105,41 @@ promotionToggleBtn.addEventListener('click',function() {
         promotionEl.classList.remove('hide');
     }
 });
+
+function random(min, max) {
+    return parseFloat((Math.random() * (max - min) + min))
+}
+function floatingObject(selector, delay, size) {
+    gsap.to(
+        selector, random(1.5, 2.5), {
+            y: size,
+            repeat: -1,
+            yoyo: true,  // 반복  
+            ease: Power1.easeInOut, //https://greensock.com/docs/v2/Easing 애니메이션 움직임속도제어
+            delay: random(0, delay),
+        }
+    );
+}
+
+floatingObject('.floating1', 1, 15);
+floatingObject('.floating2', .5, 15);
+floatingObject('.floating3', 1.5, 20);
+
+
+
+const spyEls =document.querySelectorAll('section.scroll-spy')
+spyEls.forEach(function (spyEl) {
+    new ScrollMagic
+        .Scene({
+            triggerElement : spyEl,
+            // 보여짐 여부를 감시할 요소를 지정 
+            triggerHook : 0.8,
+            // viewport 시작하는위치 0 끝나는 위치 1
+            // .8에 spyEl이 보여진다고 판단이 되면 setClassToggle이 실행이된다.
+        })
+        .setClassToggle(spyEl, 'show')
+        // Scene에서 해당이 되는 Class들에게 show라는 class를 추가시킴
+        .addTo(new ScrollMagic.Controller());
+        // 컨트롤러에 장면을 할당.
+})
+
