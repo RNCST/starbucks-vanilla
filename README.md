@@ -5,7 +5,7 @@
 
 [DEMO](https://rncst.github.io/starbucks-vanilla/)
 
-[Repository](https://github.com/RNCST/starbucks-vanilla)
+[Repository](rncststarbucks.netlify.app)
 
 ## 📖 What I USE 
 
